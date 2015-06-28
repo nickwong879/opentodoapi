@@ -31,12 +31,22 @@ users = User.all
 end
 
 # Create lists
-10.times do
+5.times do
 	List.create!(
 		name: Faker::Lorem.word,
-		user: users.sample
+		user: users.sample,
+		permissions: 'Private'
 		)
 end
+
+5.times do
+	List.create!(
+		name: Faker::Lorem.word,
+		user: users.sample,
+		permissions: 'Public'
+		)
+end
+
 lists = List.all
 
 # Create items
