@@ -13,10 +13,22 @@ require 'faker'
 	user = User.new(
 		name: Faker::Name.name,
 		email: Faker::Internet.email,
+		password: Faker::Lorem.characters(10)
 		)
 	user.save!
 end
 users = User.all
+
+# Admin user
+1.times do
+	user = User.new(
+		name: 'Admin',
+		email: 'admin@example.com',
+		password: 'helloworld'
+		)
+	user.save!
+
+end
 
 # Create lists
 10.times do
