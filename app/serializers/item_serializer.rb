@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :list_id, :created_at, :updated_at
+  attributes :id, :name, :list_id, :created_at, :updated_at, :status
 
   def name
   	object.name
@@ -15,6 +15,10 @@ class ItemSerializer < ActiveModel::Serializer
 
   def updated_at
   	object.updated_at.strftime('%B %d, %Y')
+  end
+
+  def status
+    object.status
   end
 
 end

@@ -53,6 +53,7 @@ lists = List.all
 50.times do
 	Item.create!(
 		name: Faker::Lorem.sentence,
+		status: 'In progress',
 		list: lists.sample
 		)
 end
